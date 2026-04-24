@@ -71,7 +71,7 @@ const RegistrationDialog = ({ event, open, onOpenChange }: RegistrationDialogPro
 
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:8081/api/v1/register", {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/register`, {
         teamName,
         eventId: event?.id,
         leaderName,

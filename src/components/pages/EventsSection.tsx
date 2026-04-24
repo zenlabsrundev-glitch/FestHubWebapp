@@ -14,7 +14,7 @@ const EventsSection = ({ onRegister }: EventsSectionProps) => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get("http://localhost:8081/api/v1/registration/active");
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/registration/active`);
         if (response.data.success) {
           setActiveEvents(response.data.data);
         }

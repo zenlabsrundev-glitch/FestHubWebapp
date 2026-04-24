@@ -17,7 +17,7 @@ const SponsorsAbout = () => {
   useEffect(() => {
     const fetchFeatured = async () => {
       try {
-        const response = await axios.get("http://localhost:8081/api/v1/registration/featured");
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/registration/featured`);
         if (response.data.success) {
           setFeaturedEvents(response.data.data);
         }
